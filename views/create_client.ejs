@@ -1,0 +1,36 @@
+<form id="createClientForm" class="form-horizontal" action="/api/client/" method="post">
+  <div class="form-group">
+    <label for="name" class="col-lg-2 control-label">Project Name</label>
+    
+    <div class="col-lg-10">
+      <input type="text" class="form-control" name="name" value="testprj" placeholder="name" minlength="6" maxlength="20" require="true">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="description" class="col-lg-2 control-label">Project Description</label>
+    
+    <div class="col-lg-10">
+      <input type="text" class="form-control" name="description" value="prj for test" placeholder="description">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="description" class="col-lg-2 control-label">Redirect URI</label>
+    
+    <div class="col-lg-10">
+      <input type="text" class="form-control" name="uri" value="http://ssul.it" placeholder="uri">
+    </div>
+  </div>
+  
+  <div class="form-group">
+      <div class="col-lg-offset-2 col-lg-10">
+          <button type="submit" class="btn btn-primary" data-bypass="true">확인</button>
+          <a href="#" class="btn btn-default">취소</a>
+      </div>
+  </div>
+</form>
+
+<script>
+  document.getElementById("registForm").action=window.location.origin + "/client/";
+</script>

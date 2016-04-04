@@ -1,0 +1,12 @@
+<p><b><%= client.name %></b> 앱에서 추가 권한을 요청합니다.</p>
+<p>기존 권한 : <%= oldscope %>
+<p>새로운 권한 : <%= newscope %>
+<p>승인하시겠습니까?</p>
+
+<form id = "improve" action="/dialog/authorize/decision" method="post">
+  <input name="transaction_id" type="hidden" value="<%= transactionID %>">
+  <div>
+  <input type="submit" value="Allow" id="allow">
+  <!--input type="submit" value="Deny" name="cancel" id="deny" onclick="documnet.getElementById('improve').action='/dialog/authorize/deny'"-->
+  </div>
+</form>

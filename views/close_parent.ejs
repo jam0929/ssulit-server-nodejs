@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body onload='loaded()'>
+</body>
+<script language="javascript">
+  function loaded() {
+    var url = decodeURIComponent("<%= redirect_uri %>");
+    if ("<%= open_type %>" === "popup") {
+      window.opener.location.href = url; close();
+      return true;
+    }
+    else if ("<%= open_type %>" === "iframe") {
+      window.parent.location.href= url;
+      return true;
+    } else {
+      window.location.href=url;
+      return true;
+    }
+  }
+  
+  window.onload=loaded;
+</script>
+</html>

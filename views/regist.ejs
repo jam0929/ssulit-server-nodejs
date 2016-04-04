@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JumpingNuts Log-out</title>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+  
+  <!-- Font awsome -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+  <style>
+    body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #eee;
+    }
+
+    .form-signin {
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+      margin-bottom: 10px;
+    }
+    .form-signin .checkbox {
+      font-weight: normal;
+    }
+    .form-signin .form-control {
+      position: relative;
+      font-size: 16px;
+      height: auto;
+      padding: 10px;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    .form-signin .form-control:focus {
+      z-index: 2;
+    }
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <form id="registForm" method="post" class="form-signin" role="form">
+      <%if (typeof message !== "undefined") { %>
+        <h2 class="form-signin-heading"><%=message %></h2>
+      <% } %>
+      <h2 class="form-signin-heading">회원가입</h2>
+      <div class="form-group">
+          <label for="email" class="control-label">이메일</label>
+          <input type="email" class="form-control" name="email" placeholder="Email" required="true">
+      </div>
+      <div class="form-group">
+          <label for="name" class="control-label">닉네임</label>
+          <input type="text" class="form-control" name="nickname" placeholder="name" minlength="3" maxlength="20" required="true">
+      </div>
+      <div class="form-group">
+          <label for="password" class="control-label">비밀번호</label>
+          <input type="password" class="form-control" name="password" placeholder="Password" minlength="4" maxlength="20" required="true">
+      </div>
+      
+      <%if (typeof returnTo !== "undefined") { %>
+        <div class="form-group">
+          <input type="hidden" name="returnTo" value="<%= returnTo %>">
+        </div>
+      <% } %>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" data-bypass="true">Confirm</button>
+      <!--button type="button" class="btn btn-lg btn-danger btn-block" onClick="window.parent.location.href='/'">Cancel</button>-->
+    </form>
+  </div> <!-- /container -->
+  
+  <script>
+    document.getElementById("registForm").action=window.location.origin + "/regist";
+  </script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</html>

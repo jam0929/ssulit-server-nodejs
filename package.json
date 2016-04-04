@@ -1,0 +1,41 @@
+{
+  "name": "api-server",
+  "version": "0.0.1",
+  "description": "jumpingnuts api server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.jumpingnuts.com:internal/api-server.git"
+  },
+  "author": "Jumping Nuts Inc.",
+  "license": "BSD",
+
+  "dependencies": {
+    "express": ">= 3.4.7",
+    "nodemon": "*",
+    "connect": "*",
+    "node-oauth2-server": "*",
+    "path": ">= 0.4.9",
+    "mysql": ">= 2.0",
+    "aws-sdk": ">= 2.0",
+    "crypto": "*",
+    "cluster": "*",
+    "forever": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "passport-http-bearer": "*",
+    "passport-facebook": "*",
+    "connect-ensure-login": "*",
+    "ejs": "*",
+    "oauth2orize": "*",
+    "request": "*",
+    "redis": "*",
+    "connect-redis": "*",
+    "async": "*",
+    "passport-strategy": "*"
+  }
+
+}
